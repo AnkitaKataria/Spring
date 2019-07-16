@@ -1,0 +1,11 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="engine" class="com.ajay.Engine">
+		<property name="modelyear" value="2019"></property>
+	</bean>
+	<!-- 
+	Here is example of auto detect auto wiring. If we use default constructor and setter,
+	Then parameterized constructor wont be executed -->
+	<bean id="c" class="com.ajay.Train" autowire="autodetect"/>
+</beans>

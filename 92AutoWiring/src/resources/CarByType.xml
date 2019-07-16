@@ -1,0 +1,18 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<bean id="e" class="com.ajay.Engine">
+		<property name="modelyear" value="2018"></property>
+	</bean>
+	<!-- Using autowiring, we don't need to provide reference of Engine in Car. For this, setter must be there  -->
+	<bean id="c" class="com.ajay.Car" autowire="byType">
+		<property name="carname" value="BMW"></property>
+	</bean>
+	
+	<!-- If we need to create more than one object of Engine and autowire="byType", 
+	 We will get ambiguity then in second object set autowire-candidate=false,
+	 which makes second Engine bean not eligible for autowiring -->
+	 <bean id="e1" class="com.ajay.Engine" autowire-candidate="false">
+		<property name="modelyear" value="2018"></property>
+	</bean>
+</beans>

@@ -1,0 +1,16 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+	<!-- For annotation, we must configure this class here -->
+	<bean class="org.springframework.beans.factory.annotation.AutowiredAnnotationBeanPostProcessor"/>
+	<bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"></bean>
+
+	<bean id="e" class="com.ajay.Engine"><!-- Here we can use ref name engine or qualifier name e -->
+		<property name="modelyear" value="2019"></property>
+	</bean>
+	<!-- Using autowiring, we don't need to provide reference of Engine in Car 
+	Using annotation, we don't need to provide autowire attribute-->
+	<bean id="c" class="com.ajay.CarBeanWithAnnotation">
+		<property name="carname" value="Jaguar Annotation"></property>
+	</bean>
+</beans>
