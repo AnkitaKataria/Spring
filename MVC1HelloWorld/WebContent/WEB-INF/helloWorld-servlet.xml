@@ -1,0 +1,37 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-2.5.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-2.5.xsd">
+		<!-- Use below if not using annotation
+		
+		<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			 -->
+
+	<!-- If you don't provide handler, It will take default handler.
+	This particular mapping has support for direct name matching and also for pattern matching using the “*” pattern.
+
+	For example, an incoming URL “/foo” maps to a bean called “/foo”. 
+	An example of pattern mapping is mapping requests to “/foo*” to beans with names 
+	starting with “/foo” like “/foo2/” or “/fooOne/”.
+		 
+	<bean name="org.springframework.web.servlet.handler.BeanNameUrlHandlerMapping"/>
+	 -->
+ 	<!-- Controller -->
+ 	<!-- Comment if using @Controller annotation -->
+	<!-- <bean name="/helloWorld.aj" class="com.ajay.HelloController"/> -->
+	
+	<!-- context:component-scan with annotation. Using this,Front controller aka 
+	DispatcherServelt knows that we are using annotation based controller. So it look for 
+	controller in this package-->
+	<context:component-scan base-package="com.ajay"></context:component-scan>
+	
+	<!-- View resolver -->
+	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="prefix" value="/"></property>
+		<property name="suffix" value=".jsp"></property>
+	</bean>
+</beans>
