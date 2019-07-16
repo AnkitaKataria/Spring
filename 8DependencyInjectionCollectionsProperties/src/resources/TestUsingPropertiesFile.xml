@@ -1,0 +1,19 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:util="http://www.springframework.org/schema/util"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd ">
+	<bean id="c" class="com.ajay.Test">
+		<property name="driver">
+			<util:properties location="classpath:resources/Driver.properties"/>
+		</property>
+	</bean>
+	
+	<!-- Other way to read data from property file is using resource Bundle. Always use Bean id as messageSource here -->
+	<bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource">
+		<property name="basenames">
+			<list>
+				<value>resources/Driver</value><!-- Property file name -->
+			</list>
+		</property>
+	</bean>
+</beans>

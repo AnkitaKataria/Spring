@@ -1,0 +1,11 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			
+<beans>
+	<bean id="t" class="com.ajay.TestConstructor" scope="prototype">
+		<constructor-arg value="10" type="int" index="1"></constructor-arg>
+		<constructor-arg value="a@csc.com" type="String" index="2"></constructor-arg>
+		<constructor-arg value="Ajay" type="String" index="0"></constructor-arg>
+	</bean>
+</beans>
+<!-- If a constructor has more than 1 same type of parameter, use type and index -->

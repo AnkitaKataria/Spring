@@ -1,0 +1,23 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+			
+<!-- <beans> -->
+<!-- 	<bean id="c" class="com.ajay.Car"> -->
+<!-- 		<property name="carname" value="AUDI"></property> -->
+<!-- 	</bean> -->
+<!-- </beans> -->
+
+
+<!-- We can use a single xml instead of multiple xml for different beans -->
+
+<beans>
+	<bean id="c" class="com.ajay.Car">
+		<property name="carname" value="BMW"></property>
+		<property name="engine">
+			<bean class="com.ajay.Engine">
+				<property name="modelyear" value="2018"></property>
+			</bean>
+		</property>
+	</bean>
+	<alias name="c" alias="car"/><!-- We can give a alias name to a bean -->
+</beans>

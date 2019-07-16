@@ -1,0 +1,25 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+
+<beans>
+	<bean id="c" class="com.ajay.Test">
+		<property name="fruits">
+			<list>
+				<value>Apple</value>
+				<value>banana</value>				
+			</list>
+		</property>
+		<property name="cricketers">
+			<set>
+				<value>Sachin</value>
+				<value>Saurav</value>
+			</set>
+		</property>
+		<property name="cc">
+			<map>
+				<entry key="India" value="Delhi"></entry>
+				<entry key="USA" value="Washington"></entry>
+			</map>
+		</property>
+	</bean>
+</beans>

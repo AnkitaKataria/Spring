@@ -1,0 +1,14 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>
+
+	<!--  dependency-check has been removed. read- https://docs.spring.io/spring/docs/upgrade/spring3/html/ch03s03.html -->
+	<bean id="c" class="com.ajay.Car" dependency-check="default">
+		<property name="carname" value="BMW"></property>
+		<property name="Engine">
+			<bean id="e" class="com.ajay.Engine">
+				<property name="modelyear" value="2018"></property>
+			</bean>
+		</property>
+	</bean>
+</beans>

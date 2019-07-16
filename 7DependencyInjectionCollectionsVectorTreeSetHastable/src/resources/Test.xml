@@ -1,0 +1,26 @@
+<beans xmlns="http://www.springframework.org/schema/beans" 
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		xmlns:util="http://www.springframework.org/schema/util"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-2.0.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-2.0.xsd">
+	
+	<bean id="c" class="com.ajay.Test">
+		<property name="fruits">
+			<util:list list-class="java.util.Vector">
+				<value>Apple</value>
+				<value>banana</value>				
+			</util:list>
+		</property>
+		<property name="cricketers">
+			<util:set set-class="java.util.TreeSet">
+				<value>Sachin</value>
+				<value>Ajay</value>
+			</util:set>
+		</property>
+		<property name="cc">
+			<util:map map-class="java.util.Hashtable">
+				<entry key="India" value="Delhi"></entry>
+				<entry key="USA" value="Washington"></entry>
+			</util:map>
+		</property>
+	</bean>
+</beans>
