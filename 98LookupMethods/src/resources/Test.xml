@@ -1,0 +1,13 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>	
+	<bean id="e" class="com.ajay.Engine">
+		<property name="modelyear" value="2018"></property>
+	</bean>
+	<bean id="c" class="com.ajay.Car">
+		<lookup-method name="myEngine" bean="e"/>
+		<!-- using Engine reference we are providing implementation of myEngine abstract method  -->
+	</bean>
+	<!-- On loading xml, runtime Car Proxy class will be created which will have a myEngine(),
+	And this method returns object of Engine -->
+</beans>

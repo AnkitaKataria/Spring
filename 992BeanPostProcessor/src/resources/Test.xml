@@ -1,0 +1,28 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>	
+	<bean id="engine1" class="com.ajay.Engine">
+		<property name="modelyear" value="${engine1.modelyear}"></property>
+	</bean>
+	<bean id="engine2" class="com.ajay.Engine">
+		<property name="modelyear" value="2019"></property>
+	</bean>
+	<bean id="engine3" class="com.ajay.Engine">
+		<property name="modelyear" value="2020"></property>
+	</bean>
+	
+	<bean id="c1" class="com.ajay.Car">
+		<property name="engine1" ref="engine1"/>		
+		<property name="engine2" ref="engine2"/>
+		<property name="engine3" ref="engine3"/>
+	</bean>
+	<bean class="com.ajay.DisplayNameBeanPostProcessor"></bean>
+	<bean class="com.ajay.MyBeanFactoryPostProcessor"></bean>
+	
+	<!-- It is used to pass values to bean property from a properties file. It is beanPostProcessor -->
+	<bean class=" org.springframework.context.support.PropertySourcesPlaceholderConfigurer">
+		<property name="locations" value="classpath:resources/engine.properties"></property>
+	</bean>
+	
+	
+</beans>

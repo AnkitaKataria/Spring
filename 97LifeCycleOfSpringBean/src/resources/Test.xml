@@ -1,0 +1,22 @@
+<!DOCTYPE beans PUBLIC "-//SPRING//DTD BEAN 2.0//EN"
+			"http://www.springframework.org/dtd/spring-beans-2.0.dtd">
+<beans>	
+	<bean id="e" class="com.ajay.Test">
+		<property name="driverName" value="oracle"></property>
+		<property name="url" value="oracle.jdbc"></property>
+	</bean>
+	
+	<!-- If you are not implementing InitializingBean, DisposableBean, you can use
+	 following properties as well and change name of afterPropertiesSet and destroy 
+	 method to any name 
+	 <bean id="e" class="com.ajay.Test" init-method="conInit" destroy-method="ConCleanup">
+		<property name="driverName" value="oracle"></property>
+		<property name="url" value="oracle.jdbc"></property>
+	</bean>-->
+	
+	
+	<!-- In above commented section, instead of using init-method and destroy-method
+	We can use Annotations. @PostConstruct for init and @PreDestory for destroy.	
+	For this make entry of following bean in xml 
+	import org.springframework.context.annotation.CommonAnnotationBeanPostProcessor; -->
+</beans>
